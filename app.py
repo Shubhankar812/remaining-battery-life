@@ -6,7 +6,7 @@ import sklearn.metrics._dist_metrics as dist_metrics
 app = Flask(__name__)
 
 
-dt = pickle.load(open('dt_model.pkl', 'rb'))
+dt = pickle.load(open('knn_model.pkl', 'rb'))
 
 @app.route("/")
 def Home():
@@ -19,6 +19,7 @@ def predict():
     f1 = float(data['f1'])
     f2 = float(data['f2'])
     f3 = float(data['f3'])
+
 
     final_input = np.array([f1, f2, f3]).reshape(1, -1)
 
